@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  <input [(ngModel)]="newTaskTitle" placeholder="New task" />
+  <button (click)="addTask()">Add task</button>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let task of tasks">
+      <input
+        type="checkbox"
+        [(ngModel)]="task.completed"
+        (ngModelChange)="toggleTaskCompletion(task)"
+      />
+      {{ task.title }}
+    </li>
+  </ul>
+</div>
